@@ -22,6 +22,7 @@ public class TestDataParams {
     private final OSType osType;
     private final String platformVersion;
     private final String deviceName;
+    private final String deviceVersion;
     private final RunningPlatform runningPlatform;
     private final EnvironmentType envType;
 
@@ -43,6 +44,7 @@ public class TestDataParams {
         osType = OSType.valueOf(upperCase(testConfig.devicePlatform()));
         platformVersion = testConfig.platformVersion();
         deviceName = testConfig.deviceName();
+        deviceVersion=testConfig.deviceVersion();
         runningPlatform = RunningPlatform.valueOf(upperCase(testConfig.runningPlatform()));
         envType = EnvironmentType.valueOf(upperCase(testConfig.envType()));
 
@@ -88,6 +90,10 @@ public class TestDataParams {
 
     public String getDeviceName() {
         return deviceName;
+    }
+
+    public String getDeviceVersion() {
+        return deviceVersion;
     }
 
     public RunningPlatform getRunningPlatform() {

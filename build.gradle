@@ -81,12 +81,7 @@ test {
 }
 
 task mobileCucumberTests(type: Test) {
-    systemProperties = [
-            'device.platform' : System.getProperty("device.platform", "android"),
-            'device.name' : System.getProperty("device.name", "pixel_3_v9"),
-            'env.type' : System.getProperty("env.type", "qa"),
-            'running.platform' : System.getProperty("running.platform", "local")
-    ]
+    systemProperty('cucumber.features', 'src/test/resources/net/testiteasy/features/WikipediaWelcomeScreen.feature')
     include '**/*RunCucumberTest*'
     useJUnitPlatform()
 }

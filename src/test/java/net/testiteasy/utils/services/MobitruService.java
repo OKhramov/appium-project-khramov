@@ -108,7 +108,9 @@ public class MobitruService {
                 .oauth2(testConfig().getMobitruAuthorizationKey())
                 .params(
                         "version", testConfig().getPlatformVersion(),
-                        "type", "phone"
+                        "type", "phone",
+                        "manufacturer",testConfig().getDeviceName(),
+                        "model",testConfig().getDeviceVersion()
                 )
                 .when()
                 .get()

@@ -23,8 +23,12 @@ public interface TestFrameworkConfig extends Config {
     String androidAppPath();
 
     @Key("device.name")
-    @DefaultValue("pixel_3_v9")
+    @DefaultValue("SAMSUNG")
     String deviceName();
+
+    @Key("device.version")
+    @DefaultValue("SM-G975F")
+    String deviceVersion();
 
     @Key("device.platform")
     @DefaultValue("android")
